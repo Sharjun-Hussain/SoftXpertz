@@ -1,24 +1,18 @@
 "use client";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { FloatingNav } from "@/components/ui/floating-navbar";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { Spotlight } from "@/components/ui/Spolight";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import project1 from "@/public/project1.png";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { links, products, Services, services, testimonials } from "@/lib/Data";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { GoogleGeminiEffectDemo } from "./Components/google-gemini";
 import { ContactSection } from "./Components/contact";
 import logo from "@/public/logo.jpg";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import SocialMedia from "./Components/socialMedia";
 
 export default function Home() {
   const cards = Services.map((card, index) => (
@@ -102,7 +96,7 @@ export default function Home() {
         />
       </div>
 
-      <StickyScroll content={services} />
+      <StickyScroll id="services" content={services} />
 
       <div className="relative">
         {/* <SocialMedia className="absolute left-4 top-4 flex flex-col gap-4 space-x-3" /> */}
