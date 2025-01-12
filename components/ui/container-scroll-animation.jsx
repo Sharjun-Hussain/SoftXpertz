@@ -30,10 +30,10 @@ export const ContainerScroll = ({ titleComponent, children }) => {
 
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex items-center  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] justify-center relative p-2 md:p-20"
+      className="h-[60rem] md:h-[80rem] flex items-center bg-black  bg-grid-white/[0.2]  justify-center relative p-2 md:p-20"
       ref={containerRef}
     >
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div
         className="py-10 md:py-40 w-full relative"
         style={{

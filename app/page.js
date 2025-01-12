@@ -1,3 +1,4 @@
+"use client";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
@@ -25,31 +26,36 @@ export default function Home() {
   ));
   const words = `Crafting Tailored Software Solutions that Drive Innovation and Growth.`;
   return (
-    <div className="h-screen w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative items-center justify-center">
+    <div className="h-screen w-full bg-black   bg-grid-white/[0.2] relative items-center justify-center">
       {/* Radial gradient for the container to give a faded look */}
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div id="home">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      {/* <FloatingNav /> */}
+        {/* <FloatingNav /> */}
 
-      <Spotlight />
-      <BackgroundLines className="flex items-center  justify-center w-full flex-col px-4">
-        <Image src={logo} alt="image" width={300} />
-        <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
-          Empowering Your Businesses with <div>SoftXpertz</div>
-        </h2>
-        <p className="max-w-[70%] mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-          At SoftXpertz, we are a best IT company in srilanka near you,
-          specializing in a wide range of services including graphic design,
-          video editing, digital marketing, website development, and mobile app
-          development. Our mission is to empower your business with innovative
-          and effective solutions that drive success.
-        </p>
-      </BackgroundLines>
+        <Spotlight />
+        <BackgroundLines className="flex items-center  justify-center w-full flex-col px-4">
+          <Image src={logo} alt="image" width={300} />
+          <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
+            Empowering Your Businesses with <div>SoftXpertz</div>
+          </h2>
+          <p className="max-w-[70%] mx-auto text-sm md:text-lg text-neutral-400 text-center">
+            At SoftXpertz, we are a best IT company in srilanka near you,
+            specializing in a wide range of services including graphic design,
+            video editing, digital marketing, website development, and mobile
+            app development. Our mission is to empower your business with
+            innovative and effective solutions that drive success.
+          </p>
+        </BackgroundLines>
+      </div>
 
-      <div className="w-full relative h-full dark:bg-grid-white/[0.2] bg-grid-black/[0.2] py-20">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl  font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-          Our Services
+      <div
+        id="products"
+        className="w-full relative h-full bg-black bg-grid-white/[0.2]  py-20"
+      >
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl  font-bold text-neutral-200 font-sans">
+          Our Products
         </h2>
         <Carousel items={cards} />
       </div>
@@ -58,7 +64,7 @@ export default function Home() {
         <ContainerScroll
           titleComponent={
             <>
-              <h1 className="text-4xl mt-44 font-semibold text-black mb-6 dark:text-white">
+              <h1 className="text-4xl mt-44 font-semibold  mb-6 text-white">
                 Meet our Main Product <br />
                 <span className="text-4xl md:text-[6rem] font-bold mt-6  leading-none">
                   BOOKING SYSTEM
@@ -83,9 +89,11 @@ export default function Home() {
       </div>
       <HeroParallax products={products} />
 
-      <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <div className="w-full h-[150px] items-center flex justify-center">
-          <h1 className="text-5xl font-bold  text-center ">Testimonials</h1>
+          <h1 className="text-5xl font-bold  text-white text-center ">
+            Testimonials
+          </h1>
         </div>
         <InfiniteMovingCards
           items={testimonials}
