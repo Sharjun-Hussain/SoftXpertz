@@ -108,9 +108,10 @@ export default function Home() {
         {/* <SocialMedia className="absolute left-4 top-4 flex flex-col gap-4 space-x-3" /> */}
         <ContactSection />
       </div>
-      <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="">
         <FloatingDock
-          mobileClassName="translate-y-20" // only for demo, remove for production
+          desktopClassName="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50"
+          mobileClassName="fixed bottom-4 right-1 transform -translate-x-1/2 z-50" // only for demo, remove for production
           items={links}
         />
       </div>
