@@ -13,6 +13,9 @@ import logo from "@/public/logo.jpg";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { motion } from "framer-motion";
+import ProductCard from "./Components/products-card";
+import ContactUs from "./Components/contact-us";
 
 export default function Home() {
   const cards = Services.map((card, index) => (
@@ -96,11 +99,61 @@ export default function Home() {
         />
       </div>
 
-      <StickyScroll id="services" content={services} />
+      {/* <StickyScroll id="services" content={services} /> */}
+
+      <div className="h-screen bg-black">
+        <div className="text-center bg-black p-6 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+          >
+            <motion.h1
+              initial={{ opacity: 0, x: -50 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+              className="text-5xl font-extrabold text-slate-100"
+            >
+              Our Products
+            </motion.h1>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: 1.2,
+              ease: "easeIn",
+            }}
+          >
+            <p className="text-lg text-slate-300 mt-4">
+              Delivering high-quality services tailored to your needs. Explore
+              our offerings below.
+            </p>
+          </motion.div>
+        </div>
+        <ProductCard />
+      </div>
 
       <div className="relative">
         {/* <SocialMedia className="absolute left-4 top-4 flex flex-col gap-4 space-x-3" /> */}
-        <ContactSection />
+        {/* <ContactSection /> */}
+        <ContactUs />
       </div>
       <div className="">
         <FloatingDock
