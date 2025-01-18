@@ -127,7 +127,7 @@ export default function Home() {
                 delay: 0.3,
                 ease: "easeOut",
               }}
-              className="text-5xl font-extrabold text-slate-100"
+              className="md:text-5xl text-lg font-extrabold text-slate-100"
             >
               Our Products
             </motion.h1>
@@ -141,7 +141,7 @@ export default function Home() {
               ease: "easeIn",
             }}
           >
-            <p className="text-lg text-slate-300 mt-4">
+            <p className="md:text-lg text-sm text-slate-300 mt-4">
               Delivering high-quality services tailored to your needs. Explore
               our offerings below.
             </p>

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { WorldMap } from "@/components/ui/world-map";
 import { PinPerspective } from "@/components/ui/3d-pin";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="h-screen items-center bg-black px-8">
+    <div className="h-screen items-center bg-black md:px-8">
       <div className="text-center bg-black p-6 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -74,7 +75,7 @@ const ContactUs = () => {
               delay: 0.3,
               ease: "easeOut",
             }}
-            className="text-5xl font-extrabold text-slate-100"
+            className="md:text-5xl text-lg font-extrabold text-slate-100"
           >
             Contact Us
           </motion.h1>
@@ -88,13 +89,13 @@ const ContactUs = () => {
             ease: "easeIn",
           }}
         >
-          <p className="text-lg text-slate-300 mt-4">
+          <p className="md:text-lg text-sm text-slate-300 mt-4">
             Have questions or need assistance? Reach out to us we’re here to
             help!
           </p>
         </motion.div>
       </div>
-      <div className=" flex justify-center items-center  px-5">
+      <div className=" md:flex md:justify-center md:items-center  px-5">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,26 +113,23 @@ const ContactUs = () => {
               We are always looking for ways to improve our products and
               services. Contact us and let us know how we can help you.
             </p>
-            <div className="flex justify-between">
-              <p className="mb-4  text-sm text-zinc-300">info@softxpertz.lk</p>
-              <p className="mb-4">+94 75 75 75 755</p>
-              <p className="text-sm">Sainthamaruthu, Srilanka</p>
+            <div className="flex md:flex-row space-y-2 md:space-y-0 flex-col md:justify-between">
+              <p className="text-sm flex items-center gap-2 text-zinc-300">
+                <Mail size={14} /> info@softxpertz.lk
+              </p>
+              <p className="text-sm flex items-center gap-2 text-zinc-300">
+                {" "}
+                <Phone size={14} /> +94 75 75 75 755
+              </p>
+              <p className="text-sm flex items-center gap-2 text-zinc-300">
+                <MapPin size={14} /> Sainthamaruthu, Srilanka
+              </p>
             </div>
             <WorldMap />
-
-            {/* <div>
-              <p className="text-sm font-light">Email</p>
-             
-              <p className="text-sm font-light">Phone</p>
-              
-              <p className="text-sm font-light">Address</p>
-              
-            </div> */}
           </motion.div>
 
-          {/* Right Side: Contact Form */}
           <motion.div
-            className="p-10 md:w-1/2 flex flex-col justify-center"
+            className="pt-3 md:p-10 md:w-1/2 flex flex-col justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
