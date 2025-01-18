@@ -206,7 +206,15 @@ export const Card = ({ card, index, layout = false }) => {
               >
                 {card.title}
               </motion.p>
-              <div className="py-10">{card.content}</div>
+              <div className="py-10">{card.description}</div>
+              <div className="text-2xl">{card.benefitsDescription}</div>
+              {card.benefits.map((item, index) => {
+                return (
+                  <li className="my-2" key={index}>
+                    {item}
+                  </li>
+                );
+              })}
             </motion.div>
           </div>
         )}

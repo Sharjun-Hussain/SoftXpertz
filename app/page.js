@@ -49,7 +49,7 @@ export default function Home() {
       >
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl  font-bold text-neutral-200 font-sans">
-          Our Products
+          Our Services
         </h2>
         <Carousel items={cards} />
       </div>
