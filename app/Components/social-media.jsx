@@ -1,0 +1,98 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+
+export default function FooterWithLogo() {
+  const socialLinks = [
+    { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
+    { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+    { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
+  ];
+
+  const footerLinks = [
+    { name: "Blog", href: "/blog" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "User Agreement", href: "/user-agreement" },
+    { name: "Community Guidelines", href: "/community-guidelines" },
+    { name: "Security Policy", href: "/security-policy" },
+    { name: "Copyrights Received", href: "/copyrights" },
+  ];
+
+  const container = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: { opacity: 1, scale: 1 },
+  };
+
+  return (
+    <motion.footer
+      className="w-full bg-gray-100 dark:bg-gray-800 p-6 md:p-10"
+      initial="hidden"
+      animate="show"
+      variants={container}
+    >
+      {/* Logo Section */}
+      <div className="flex flex-col items-center md:flex-row md:justify-between">
+        <motion.div
+          className="flex items-center gap-4 mb-6 md:mb-0"
+          variants={item}
+        >
+          <img
+            src="/logo.png"
+            alt="Company Logo"
+            className="w-16 h-16 object-cover rounded-full"
+          />
+          <h1 className="lg:text-2xl text-lg font-bold text-gray-800 dark:text-gray-200">
+            SoftXpertz (PVT) Ltd
+          </h1>
+        </motion.div>
+
+        {/* Social Media Links */}
+        <motion.div className="flex gap-4" variants={container}>
+          {socialLinks.map(({ name, icon: Icon, href }, index) => (
+            <motion.a
+              key={index}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-white dark:bg-gray-900 rounded-full shadow-md hover:scale-110 hover:shadow-xl transition-transform duration-300"
+              variants={item}
+            >
+              <Icon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Footer Links */}
+      <motion.div
+        className="flex flex-wrap justify-center gap-6 mt-6 text-sm text-gray-600 dark:text-gray-400"
+        variants={container}
+      >
+        {footerLinks.map(({ name, href }, index) => (
+          <motion.a
+            key={index}
+            href={href}
+            className="hover:text-blue-500 transition-colors duration-200"
+            variants={item}
+          >
+            {name}
+          </motion.a>
+        ))}
+      </motion.div>
+    </motion.footer>
+  );
+}

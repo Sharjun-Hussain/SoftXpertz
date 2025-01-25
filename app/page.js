@@ -16,6 +16,8 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { motion } from "framer-motion";
 import ProductCard from "./Components/products-card";
 import ContactUs from "./Components/contact-us";
+import { CanvasRevealEffectDemo2 } from "./Components/new-product";
+import SocialMedia from "./Components/social-media";
 
 export default function Home() {
   const cards = Services.map((card, index) => (
@@ -47,8 +49,8 @@ export default function Home() {
       </div>
 
       <div
-        id="products"
-        className="w-full relative h-full bg-black bg-grid-white/[0.2]  py-20"
+        id="services"
+        className="w-full relative  bg-black bg-grid-white/[0.2]  pt-10"
       >
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl  font-bold text-neutral-200 font-sans">
@@ -57,7 +59,7 @@ export default function Home() {
         <Carousel items={cards} />
       </div>
 
-      <div className="flex  flex-col overflow-hidden">
+      {/* <div className="flex  flex-col overflow-hidden">
         <ContainerScroll
           titleComponent={
             <>
@@ -79,30 +81,13 @@ export default function Home() {
             draggable={false}
           />
         </ContainerScroll>
-      </div>
+      </div> */}
 
-      <div className="w-full p-24 mb-24 flex justify-center">
+      <div className="w-full mt-10 px-10 lg:px-0 lg:h-screen flex  bg-white py-10 lg:items-center justify-center">
         <TextGenerateEffect words={words} />
       </div>
-      <HeroParallax products={products} />
-
-      <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <div className="w-full h-[150px] items-center flex justify-center">
-          <h1 className="text-5xl font-bold  text-white text-center ">
-            Testimonials
-          </h1>
-        </div>
-        <InfiniteMovingCards
-          items={testimonials}
-          direction="right"
-          speed="slow"
-        />
-      </div>
-
-      {/* <StickyScroll id="services" content={services} /> */}
-
-      <div className="h-screen bg-black">
-        <div className="text-center bg-black p-6 overflow-hidden">
+      <div id="products" className=" bg-black  ">
+        <div className="text-center bg-black p-6 overflow-hidden lg:mt-7">
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{
@@ -147,13 +132,81 @@ export default function Home() {
             </p>
           </motion.div>
         </div>
-        <ProductCard />
+        <div className="lg:mt-12">
+          <ProductCard />
+        </div>
       </div>
+      <HeroParallax products={products} />
+
+      <div className=" rounded-md flex flex-col antialiased bg-black bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <div className="text-center bg-black p-6 overflow-hidden lg:mt-7">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1.1,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+          >
+            <motion.h1
+              initial={{ opacity: 0, x: -50 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+              className="md:text-5xl text-lg font-extrabold text-slate-100"
+            >
+              Testimonials
+            </motion.h1>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: 1.2,
+              ease: "easeIn",
+            }}
+          >
+            <p className="md:text-lg text-sm text-slate-300 mt-4">
+              Here’s what our Customers are saying about us online!
+            </p>
+          </motion.div>
+        </div>
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+      </div>
+
+      {/* <StickyScroll id="services" content={services} /> */}
 
       <div className="relative">
         {/* <SocialMedia className="absolute left-4 top-4 flex flex-col gap-4 space-x-3" /> */}
         {/* <ContactSection /> */}
         <ContactUs />
+
+        {/* <div className="py-24 items-center justify-center ">
+          <div className="flex justify-center gap-4">
+            <div>sefg</div>
+            <div>sefg</div>
+            <div>sefg</div>
+            <div>sefg</div>
+            <div>sefg</div>
+          </div>
+        </div> */}
+        <SocialMedia />
       </div>
       <div className="">
         <FloatingDock

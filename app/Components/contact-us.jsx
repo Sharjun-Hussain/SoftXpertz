@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { WorldMap } from "@/components/ui/world-map";
 import { PinPerspective } from "@/components/ui/3d-pin";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import contact from "../assets/images/contact.png";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -49,8 +51,11 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="h-screen items-center bg-black md:px-8">
-      <div className="text-center bg-black p-6 overflow-hidden">
+    <div
+      className={` items-center my-7 bg-black md:px-8 pb-7 md:mb-7`}
+      id="contact"
+    >
+      <div className="text-center bg-black p-6 overflow-hidden lg:mt-7">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{
@@ -95,7 +100,7 @@ const ContactUs = () => {
           </p>
         </motion.div>
       </div>
-      <div className=" md:flex md:justify-center md:items-center  px-5">
+      <div className=" md:flex md:justify-center md:items-center px-5">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -109,7 +114,7 @@ const ContactUs = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <p className="mb-4 text-lg">
+            <p className="mb-4 text-sm">
               We are always looking for ways to improve our products and
               services. Contact us and let us know how we can help you.
             </p>
@@ -125,7 +130,10 @@ const ContactUs = () => {
                 <MapPin size={14} /> Sainthamaruthu, Srilanka
               </p>
             </div>
-            <WorldMap />
+            <div className="flex justify-center">
+              <Image src={contact} width={350} alt="SoftXpertz" />
+            </div>
+            {/* <WorldMap /> */}
           </motion.div>
 
           <motion.div

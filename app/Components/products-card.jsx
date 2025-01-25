@@ -9,26 +9,26 @@ const ProductCard = () => {
   const image3 =
     "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   return (
-    <div className="flex gap-3 md:px-8 overflow-x-scroll">
-      <div className="h-[40rem]  flex  md:justify-center ">
+    <div className="flex gap-4 md:px-8 flex-col  lg:flex-row ">
+      <div className="  flex justify-between ">
         <DirectionAwareHover imageUrl={image1}>
           <p className="font-bold text-xl">Booking System</p>
           <p className="font-normal text-sm">Tech: Laravel | Next JS</p>
         </DirectionAwareHover>
       </div>
-      <div className="h-[40rem]  flex  justify-center">
+      <div className="  flex  justify-center">
         <DirectionAwareHover imageUrl={image2}>
           <p className="font-bold text-xl">Booking System</p>
           <p className="font-normal text-sm">Tech: Laravel | Next JS</p>
         </DirectionAwareHover>
       </div>
-      <div className="h-[40rem]  flex  justify-center">
+      <div className="  flex  justify-center">
         <DirectionAwareHover imageUrl={image3}>
           <p className="font-bold text-xl">Booking System</p>
           <p className="font-normal text-sm">Tech: Laravel | Next JS</p>
         </DirectionAwareHover>
       </div>
-      <div className="h-[40rem]  flex  justify-center">
+      <div className="  flex  justify-center">
         <DirectionAwareHover imageUrl={image1}>
           <p className="font-bold text-xl">Booking System</p>
           <p className="font-normal text-sm">Tech: Laravel | Next JS</p>

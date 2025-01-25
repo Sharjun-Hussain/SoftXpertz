@@ -13,14 +13,12 @@ export const DirectionAwareHover = ({
   className,
 }) => {
   const ref = useRef(null);
-
   const [direction, setDirection] = useState("left");
 
-  const handleMouseEnter = (event) => {
+  const handleInteraction = (event) => {
     if (!ref.current) return;
 
     const direction = getDirection(event, ref.current);
-    console.log("direction", direction);
     switch (direction) {
       case 0:
         setDirection("top");
@@ -50,10 +48,12 @@ export const DirectionAwareHover = ({
 
   return (
     <motion.div
-      onMouseEnter={handleMouseEnter}
       ref={ref}
+      onMouseEnter={handleInteraction}
+      onTouchStart={handleInteraction} // Mobile compatibility
+      onClick={handleInteraction} // Fallback for mobile devices
       className={cn(
-        "md:h-96 w-60 h-60 md:w-full bg-transparent rounded-lg overflow-hidden group/card relative",
+        "md:h-96 w-full mx-4 md:mx-0 h-60  bg-transparent rounded-lg overflow-hidden group/card relative",
         className
       )}
     >
@@ -107,7 +107,6 @@ const variants = {
   initial: {
     x: 0,
   },
-
   exit: {
     x: 0,
     y: 0,
