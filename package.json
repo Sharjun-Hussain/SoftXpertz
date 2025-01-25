@@ -23,6 +23,7 @@
     "nodemailer": "^6.9.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.3",
     "simplex-noise": "^4.0.3",
     "tailwind-merge": "^2.6.0",
     "three": "^0.172.0"

@@ -39,7 +39,7 @@ export default function FooterWithLogo() {
 
   return (
     <motion.footer
-      className="w-full bg-gray-100 dark:bg-gray-800 p-6 md:p-10"
+      className="w-full bg-zinc-900 p-6 md:p-10"
       initial="hidden"
       animate="show"
       variants={container}
@@ -52,10 +52,10 @@ export default function FooterWithLogo() {
         >
           <img
             src="/logo.png"
-            alt="Company Logo"
+            alt="SoftXpertz"
             className="w-16 h-16 object-cover rounded-full"
           />
-          <h1 className="lg:text-2xl text-lg font-bold text-gray-800 dark:text-gray-200">
+          <h1 className="lg:text-2xl text-lg font-bold text-white">
             SoftXpertz (PVT) Ltd
           </h1>
         </motion.div>
@@ -68,7 +68,7 @@ export default function FooterWithLogo() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 bg-white dark:bg-gray-900 rounded-full shadow-md hover:scale-110 hover:shadow-xl transition-transform duration-300"
+              className="p-4 bg-zinc-800 rounded-full shadow-md hover:scale-110 hover:shadow-xl transition-transform duration-300"
               variants={item}
             >
               <Icon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
@@ -79,7 +79,7 @@ export default function FooterWithLogo() {
 
       {/* Footer Links */}
       <motion.div
-        className="flex flex-wrap justify-center gap-6 mt-6 text-sm text-gray-600 dark:text-gray-400"
+        className="flex flex-wrap justify-center gap-6 mt-6 text-sm text-zinc-600 dark:text-gray-400"
         variants={container}
       >
         {footerLinks.map(({ name, href }, index) => (

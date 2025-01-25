@@ -14,10 +14,12 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { motion } from "framer-motion";
-import ProductCard from "./Components/products-card";
+
 import ContactUs from "./Components/contact-us";
 import { CanvasRevealEffectDemo2 } from "./Components/new-product";
 import SocialMedia from "./Components/social-media";
+import MobileProductCard from "./Components/mobile-product";
+import ProductCard from "./Components/products-card";
 
 export default function Home() {
   const cards = Services.map((card, index) => (
@@ -134,6 +136,7 @@ export default function Home() {
         </div>
         <div className="lg:mt-12">
           <ProductCard />
+          <MobileProductCard />
         </div>
       </div>
       <HeroParallax products={products} />
@@ -192,20 +195,11 @@ export default function Home() {
 
       {/* <StickyScroll id="services" content={services} /> */}
 
-      <div className="relative">
+      <div className="relative bg-black">
         {/* <SocialMedia className="absolute left-4 top-4 flex flex-col gap-4 space-x-3" /> */}
         {/* <ContactSection /> */}
         <ContactUs />
 
-        {/* <div className="py-24 items-center justify-center ">
-          <div className="flex justify-center gap-4">
-            <div>sefg</div>
-            <div>sefg</div>
-            <div>sefg</div>
-            <div>sefg</div>
-            <div>sefg</div>
-          </div>
-        </div> */}
         <SocialMedia />
       </div>
       <div className="">
