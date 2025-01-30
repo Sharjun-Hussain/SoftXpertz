@@ -1,6 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import product1 from "../../public/product_1.png";
+import product2 from "../../public/product_2.png";
+import product3 from "../../public/product_3.png";
+import product4 from "../../public/Product_4.png";
+import Image from "next/image";
 
 export default function MobileProductCard() {
   const hoverEffect = {
@@ -13,36 +18,47 @@ export default function MobileProductCard() {
       id: 1,
       title: "Product Name",
       category: "Category Name",
-      image: "/product-image.jpg", // Replace with your image URL
+      image: product1, // Replace with your image URL
     },
     {
       id: 2,
       title: "Another Product",
       category: "Another Category",
-      image: "/product-image-2.jpg",
+      image: product2,
+    },
+    {
+      id: 1,
+      title: "Product Name",
+      category: "Category Name",
+      image: product3, // Replace with your image URL
+    },
+    {
+      id: 2,
+      title: "Another Product",
+      category: "Another Category",
+      image: product4,
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+    <div className="grid grid-cols-1  gap-6 p-6 lg:hidden">
       {products.map((product) => (
         <motion.div
           key={product.id}
-          className="relative group rounded-lg overflow-hidden shadow-lg cursor-pointer"
+          className="relative group rounded-lg border border-white   overflow-hidden shadow-lg cursor-pointer"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
         >
           {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${product.image})` }}
-          ></div>
+          <div className=" flex justify-center inset-0 bg-cover bg-center">
+            <Image className="" width={140} alt="asf" src={product.image} />
+          </div>
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300"></div>
 
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 text-white">
+          <div className=" inset-0 flex flex-col items-center justify-center text-center p-4 text-white">
             <motion.h3
               className="text-xl font-bold"
               initial={{ opacity: 0, y: 20 }}

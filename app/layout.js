@@ -1,26 +1,22 @@
 "use client";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Teko, Saira } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const teko = Teko({
   subsets: ["latin"],
+  variable: "--font-teko",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const saira = Saira({
   subsets: ["latin"],
+  variable: "--font-saira",
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${saira.variable} font-sans`}>{children}</body>
     </html>
   );
 }

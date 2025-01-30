@@ -1,25 +1,22 @@
 "use client";
 import { BackgroundLines } from "@/components/ui/background-lines";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Spotlight } from "@/components/ui/Spolight";
 import Image from "next/image";
-import project1 from "@/public/project1.png";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { links, products, Services, services, testimonials } from "@/lib/Data";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { ContactSection } from "./Components/contact";
-import logo from "@/public/logo.jpg";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { motion } from "framer-motion";
-
 import ContactUs from "./Components/contact-us";
-import { CanvasRevealEffectDemo2 } from "./Components/new-product";
 import SocialMedia from "./Components/social-media";
 import MobileProductCard from "./Components/mobile-product";
 import ProductCard from "./Components/products-card";
+
+//Images
+import logo from "@/public/logo.png";
+import icon from "@/public/icon.png";
 
 export default function Home() {
   const cards = Services.map((card, index) => (
@@ -36,8 +33,11 @@ export default function Home() {
 
         <Spotlight />
         <BackgroundLines className="flex items-center  justify-center w-full flex-col px-4">
-          <Image src={logo} alt="image" width={300} />
-          <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
+          <div className="mt-48 w-12 md:w-24  md:mt-0 ">
+            {" "}
+            <Image src={icon} alt="image" />
+          </div>
+          <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-600 to-white text-3xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
             Empowering Your Businesses with <div>SoftXpertz</div>
           </h2>
           <p className="max-w-[70%] mx-auto text-sm md:text-lg text-neutral-400 text-center">
@@ -50,12 +50,9 @@ export default function Home() {
         </BackgroundLines>
       </div>
 
-      <div
-        id="services"
-        className="w-full relative  bg-black bg-grid-white/[0.2]  pt-10"
-      >
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl  font-bold text-neutral-200 font-sans">
+      <div id="services" className="w-full relative  bg-black   pt-10">
+        {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
+        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl  font-bold  text-center font-sans">
           Our Services
         </h2>
         <Carousel items={cards} />
@@ -85,11 +82,11 @@ export default function Home() {
         </ContainerScroll>
       </div> */}
 
-      <div className="w-full mt-10 px-10 lg:px-0 lg:h-screen flex  bg-white py-10 lg:items-center justify-center">
+      <div className="w-full mt-10  px-10 lg:px-0 lg:h-screen bg-white flex py-10 lg:items-center justify-center">
         <TextGenerateEffect words={words} />
       </div>
       <div id="products" className=" bg-black  ">
-        <div className="text-center bg-black p-6 overflow-hidden lg:mt-7">
+        <div className="text-center bg-black lg:p-6 px-5 mt-7 overflow-hidden lg:mt-7">
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{
@@ -128,7 +125,7 @@ export default function Home() {
               ease: "easeIn",
             }}
           >
-            <p className="md:text-lg text-sm text-slate-300 mt-4">
+            <p className="md:text-lg text-sm text-slate-300  lg:mt-4">
               Delivering high-quality services tailored to your needs. Explore
               our offerings below.
             </p>

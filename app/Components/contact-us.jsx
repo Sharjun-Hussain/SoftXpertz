@@ -9,6 +9,7 @@ import { PinPerspective } from "@/components/ui/3d-pin";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import contact from "../assets/images/contact.png";
+import logo from "@/public/logo.png";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -52,54 +53,10 @@ const ContactUs = () => {
 
   return (
     <div
-      className={` items-center my-7 bg-black md:px-8 pb-7 md:mb-7`}
+      className={` items-center  bg-black md:px-8 pb-7 md:mb-7`}
       id="contact"
     >
-      <div className="text-center bg-black p-6 overflow-hidden lg:mt-7">
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            scale: 1.1,
-          }}
-          transition={{
-            duration: 1,
-            ease: "easeOut",
-          }}
-        >
-          <motion.h1
-            initial={{ opacity: 0, x: -50 }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              scale: 1.1,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.3,
-              ease: "easeOut",
-            }}
-            className="md:text-5xl text-lg font-extrabold text-slate-100"
-          >
-            Contact Us
-          </motion.h1>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.6,
-            delay: 1.2,
-            ease: "easeIn",
-          }}
-        >
-          <p className="md:text-lg text-sm text-slate-300 mt-4">
-            Have questions or need assistance? Reach out to us we’re here to
-            help!
-          </p>
-        </motion.div>
-      </div>
+      <div className="text-center bg-black p-6 overflow-hidden lg:mt-7"></div>
       <div className=" md:flex md:justify-center md:items-center px-5">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -108,63 +65,101 @@ const ContactUs = () => {
           className="max-w-6xl w-full rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row"
         >
           {/* Left Side: Details */}
+
           <motion.div
-            className="bg-gradient-to-br from-zinc-900 to-slate-900 text-white p-10 md:w-1/2 flex flex-col justify-between"
+            className=" text-white md:px-10 pb-5 pt-2 md:w-1/2 flex flex-col"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <p className="mb-4 text-sm">
+            <Image
+              src={logo}
+              alt="image"
+              height={25}
+              className="flex lg:hidden"
+            />
+            <div className="lg:text-5xl text-2xl font-extrabold mb-3">
+              Contact Us
+            </div>
+            <p className=" text-lg">
               We are always looking for ways to improve our products and
               services. Contact us and let us know how we can help you.
             </p>
-            <div className="flex md:flex-row space-y-2 md:space-y-0 flex-col md:justify-between">
-              <p className="text-sm flex items-center gap-2 text-zinc-300">
-                <Mail size={14} /> info@softxpertz.lk
-              </p>
-              <p className="text-sm flex items-center gap-2 text-zinc-300">
-                {" "}
-                <Phone size={14} /> +94 75 75 75 755
-              </p>
-              <p className="text-sm flex items-center gap-2 text-zinc-300">
-                <MapPin size={14} /> Sainthamaruthu, Srilanka
-              </p>
+            <div className="flex md:flex-row gap-4 space-y-2 md:space-y-0 flex-col mt-4 md:justify-between">
+              <div className="space-y-3">
+                <p className="text-sm  mb-2 flex items-center gap-2 text-zinc-300">
+                  <Mail size={14} /> info@softxpertz.lk
+                </p>
+
+                <p className="text-lg flex  font-bold items-center gap-2 text-[#435B6E]">
+                  <MapPin size={18} /> Head Office:{" "}
+                </p>
+                <span className="text-sm ms-7">65/14, Liyanage Road,</span>
+                <br />
+                <span className="text-sm ms-7">Dehiwala,</span>
+                <br />
+                <span className="text-sm ms-7">Sri Lanka</span>
+              </div>
+              <div className="space-y-3">
+                <p className="text-sm flex items-center gap-2 text-zinc-300">
+                  {" "}
+                  <Phone size={14} /> +94 75 75 75 755
+                </p>
+
+                <p className="text-lg flex  font-bold items-center gap-2 text-[#435B6E]">
+                  <MapPin size={18} /> Back Office:{" "}
+                </p>
+                <span className="text-sm ms-7">316/A, AlHilal Road,</span>
+                <br />
+                <span className="text-sm ms-7">Sainthamaruthu-15,</span>
+                <br />
+                <span className="text-sm ms-7">Sri Lanka</span>
+              </div>
             </div>
+            <div className="mt-12"></div>
             <div className="flex justify-center">
-              <Image src={contact} width={350} alt="SoftXpertz" />
+              {/* <Image src={contact} width={250} alt="SoftXpertz" /> */}
             </div>
             {/* <WorldMap /> */}
+            <Image
+              src={logo}
+              alt="image"
+              height={50}
+              className="hidden lg:flex"
+            />
           </motion.div>
 
           <motion.div
-            className="pt-3 md:p-10 md:w-1/2 flex flex-col justify-center"
+            className=" bg-gradient-to-br from-zinc-900 to-slate-900 p-5 rounded-lg md:p-10 md:w-1/2 w-full flex flex-col h-fit "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
-              <LabelInputContainer>
-                <Label htmlFor="firstname">Name</Label>
-                <Input
-                  value={formData.name}
-                  onChange={handleChange}
-                  name="name"
-                  id="firstname"
-                  placeholder=""
-                  type="text"
-                />
-              </LabelInputContainer>
-              <LabelInputContainer>
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  value={formData.email}
-                  onChange={handleChange}
-                  name="email"
-                  id="email"
-                  placeholder=""
-                  type="text"
-                />
-              </LabelInputContainer>
+              <div className=" lg:flex gap-4">
+                <LabelInputContainer>
+                  <Label htmlFor="firstname">Name</Label>
+                  <Input
+                    value={formData.name}
+                    onChange={handleChange}
+                    name="name"
+                    id="firstname"
+                    placeholder=""
+                    type="text"
+                  />
+                </LabelInputContainer>
+                <LabelInputContainer>
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    value={formData.email}
+                    onChange={handleChange}
+                    name="email"
+                    id="email"
+                    placeholder=""
+                    type="text"
+                  />
+                </LabelInputContainer>
+              </div>
               <LabelInputContainer>
                 <Label htmlFor="subject">Subject</Label>
                 <Input

@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, X } from "lucide-react";
+import logo from "@/public/logo.png";
+import Image from "next/image";
 
 export default function FooterWithLogo() {
   const socialLinks = [
     { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+    { name: "Twitter", icon: X, href: "https://twitter.com" },
     { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
     { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
   ];
@@ -39,7 +41,7 @@ export default function FooterWithLogo() {
 
   return (
     <motion.footer
-      className="w-full bg-zinc-900 p-6 md:p-10"
+      className="w-full bg-gradient-to-br from-zinc-900 to-slate-900 p-6 md:px-10 md:py-6"
       initial="hidden"
       animate="show"
       variants={container}
@@ -50,14 +52,23 @@ export default function FooterWithLogo() {
           className="flex items-center gap-4 mb-6 md:mb-0"
           variants={item}
         >
-          <img
+          <div className="text-sm text-zinc-400">
+            Copyright © 2025 SoftXpertz (PVT) Ltd
+          </div>
+          {/* <Image
+            src={logo}
+            alt="image"
+            className=" object-cover "
+            width={300}
+          /> */}
+          {/* <img
             src="/logo.png"
             alt="SoftXpertz"
             className="w-16 h-16 object-cover rounded-full"
-          />
-          <h1 className="lg:text-2xl text-lg font-bold text-white">
+          /> */}
+          {/* <h1 className="lg:text-2xl text-lg font-bold text-white">
             SoftXpertz (PVT) Ltd
-          </h1>
+          </h1> */}
         </motion.div>
 
         {/* Social Media Links */}
@@ -68,17 +79,17 @@ export default function FooterWithLogo() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 bg-zinc-800 rounded-full shadow-md hover:scale-110 hover:shadow-xl transition-transform duration-300"
+              className="p-3 bg-zinc-800 rounded-full shadow-md hover:scale-110 hover:shadow-xl transition-transform duration-300"
               variants={item}
             >
-              <Icon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+              <Icon className="w-4 h-4 text-gray-800 dark:text-gray-200" />
             </motion.a>
           ))}
         </motion.div>
       </div>
 
       {/* Footer Links */}
-      <motion.div
+      {/* <motion.div
         className="flex flex-wrap justify-center gap-6 mt-6 text-sm text-zinc-600 dark:text-gray-400"
         variants={container}
       >
@@ -92,7 +103,7 @@ export default function FooterWithLogo() {
             {name}
           </motion.a>
         ))}
-      </motion.div>
+      </motion.div> */}
     </motion.footer>
   );
 }
