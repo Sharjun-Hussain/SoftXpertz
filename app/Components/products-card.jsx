@@ -1,9 +1,9 @@
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import React from "react";
+import erp from "../../public/erp.webp";
 
 const ProductCard = () => {
-  const image1 =
-    "https://images.unsplash.com/photo-1663765970236-f2acfde22237?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  const image1 = erp;
   const image2 =
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   const image3 =

@@ -94,10 +94,11 @@ const ContactUs = () => {
                 <p className="text-lg flex  font-bold items-center gap-2 text-[#435B6E]">
                   <MapPin size={18} /> Head Office:{" "}
                 </p>
-                <span className="text-sm ms-7">65/14, Liyanage Road,</span>
+                <span className="text-sm ms-7">Liyanage Road,</span>
                 <br />
-                <span className="text-sm ms-7">Dehiwala,</span>
+                <span className="text-sm ms-7">Dehiwala,Western Province</span>
                 <br />
+
                 <span className="text-sm ms-7">Sri Lanka</span>
               </div>
               <div className="space-y-3">
@@ -109,9 +110,9 @@ const ContactUs = () => {
                 <p className="text-lg flex  font-bold items-center gap-2 text-[#435B6E]">
                   <MapPin size={18} /> Back Office:{" "}
                 </p>
-                <span className="text-sm ms-7">316/A, AlHilal Road,</span>
+                <span className="text-sm ms-7">Kalmunai,</span>
                 <br />
-                <span className="text-sm ms-7">Sainthamaruthu-15,</span>
+                <span className="text-sm ms-7">Eastern Province </span>
                 <br />
                 <span className="text-sm ms-7">Sri Lanka</span>
               </div>
