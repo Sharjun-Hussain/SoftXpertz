@@ -206,8 +206,9 @@ export const Card = ({ card, index, layout = false }) => {
               >
                 {card.title}
               </motion.p>
-              <div className="py-10">{card.description}</div>
-              <div className="text-2xl">{card.benefitsDescription}</div>
+              <div className="pt-10 mb-5">{card.description}</div>
+              <div className="mb-5">{card.desc2}</div>
+              <div className="text-2xl my-5">{card.benefitsDescription}</div>
               {card.benefits.map((item, index) => {
                 return (
                   <li className="my-2" key={index}>
@@ -215,6 +216,31 @@ export const Card = ({ card, index, layout = false }) => {
                   </li>
                 );
               })}
+              <div className="my-5">
+                <div className="text-2xl">{card.title2}</div>
+                <div className="text-md">{card.description2}</div>
+              </div>
+              <div className="my-5">
+                <div className="text-2xl">{card.pointstitle}</div>
+                {card.points &&
+                  card.points.map((item, index) => {
+                    return (
+                      <li className="my-2" key={index}>
+                        {item}
+                      </li>
+                    );
+                  })}
+              </div>
+
+              <div>
+                <div className="text-2xl">{card.title3}</div>
+                <div className="text-md">{card.description3}</div>
+              </div>
+
+              <div>
+                <div className="text-2xl">{card.title4}</div>
+                <div className="text-md">{card.description4}</div>
+              </div>
             </motion.div>
           </div>
         )}
