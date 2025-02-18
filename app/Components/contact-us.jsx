@@ -94,9 +94,9 @@ const ContactUs = () => {
                 <p className="text-lg flex  font-bold items-center gap-2 text-[#435B6E]">
                   <MapPin size={18} /> Head Office:{" "}
                 </p>
-                <span className="text-sm ms-7">Liyanage Road,</span>
+                <span className="text-sm ms-7">Dehiwala,,</span>
                 <br />
-                <span className="text-sm ms-7">Dehiwala,Western Province</span>
+                <span className="text-sm ms-7">Western Province,</span>
                 <br />
 
                 <span className="text-sm ms-7">Sri Lanka</span>
@@ -112,7 +112,7 @@ const ContactUs = () => {
                 </p>
                 <span className="text-sm ms-7">Kalmunai,</span>
                 <br />
-                <span className="text-sm ms-7">Eastern Province </span>
+                <span className="text-sm ms-7">Eastern Province, </span>
                 <br />
                 <span className="text-sm ms-7">Sri Lanka</span>
               </div>
